@@ -1,0 +1,20 @@
+﻿@model System.Web.Security.MembershipUser
+
+@if (Model != null)
+{
+    <li>@Model.UserName</li>
+    if (Model.Email == "customer")
+    {
+    <li>@Html.ActionLink("Кошик", "LogOff", "Account")</li>
+    }
+    else
+    {
+    }
+    <li>@Html.ActionLink("Вихід", "LogOff", "Account")</li>
+
+}
+else
+{
+    <li>@Html.ActionLink("Вхід", "LogOn", "Account")</li>
+    <li>@Html.ActionLink("Реєстрація", "Register", "Account")</li>
+}

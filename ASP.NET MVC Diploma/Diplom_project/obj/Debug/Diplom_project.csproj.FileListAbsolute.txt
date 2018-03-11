@@ -1,0 +1,65 @@
+E:\Workspace\1Diplom\Diplom_project\Diplom_project\bin\Diplom_project.dll
+E:\Workspace\1Diplom\Diplom_project\Diplom_project\bin\Diplom_project.pdb
+E:\Workspace\1Diplom\Diplom_project\Diplom_project\bin\Antlr3.Runtime.dll
+E:\Workspace\1Diplom\Diplom_project\Diplom_project\bin\EntityFramework.dll
+E:\Workspace\1Diplom\Diplom_project\Diplom_project\bin\Microsoft.Web.Infrastructure.dll
+E:\Workspace\1Diplom\Diplom_project\Diplom_project\bin\Microsoft.Web.Mvc.dll
+E:\Workspace\1Diplom\Diplom_project\Diplom_project\bin\Newtonsoft.Json.dll
+E:\Workspace\1Diplom\Diplom_project\Diplom_project\bin\System.Net.Http.Formatting.dll
+E:\Workspace\1Diplom\Diplom_project\Diplom_project\bin\System.Web.Http.dll
+E:\Workspace\1Diplom\Diplom_project\Diplom_project\bin\System.Web.Http.WebHost.dll
+E:\Workspace\1Diplom\Diplom_project\Diplom_project\bin\System.Web.Mvc.dll
+E:\Workspace\1Diplom\Diplom_project\Diplom_project\bin\System.Web.Optimization.dll
+E:\Workspace\1Diplom\Diplom_project\Diplom_project\bin\System.Web.Providers.dll
+E:\Workspace\1Diplom\Diplom_project\Diplom_project\bin\System.Web.Razor.dll
+E:\Workspace\1Diplom\Diplom_project\Diplom_project\bin\System.Web.WebPages.Deployment.dll
+E:\Workspace\1Diplom\Diplom_project\Diplom_project\bin\System.Web.WebPages.dll
+E:\Workspace\1Diplom\Diplom_project\Diplom_project\bin\System.Web.WebPages.Razor.dll
+E:\Workspace\1Diplom\Diplom_project\Diplom_project\bin\WebGrease.dll
+E:\Workspace\1Diplom\Diplom_project\Diplom_project\bin\EntityFramework.xml
+E:\Workspace\1Diplom\Diplom_project\Diplom_project\bin\Newtonsoft.Json.xml
+E:\Workspace\1Diplom\Diplom_project\Diplom_project\bin\System.Net.Http.Formatting.xml
+E:\Workspace\1Diplom\Diplom_project\Diplom_project\bin\System.Web.Http.xml
+E:\Workspace\1Diplom\Diplom_project\Diplom_project\bin\System.Web.Http.WebHost.xml
+E:\Workspace\1Diplom\Diplom_project\Diplom_project\bin\System.Web.Mvc.xml
+E:\Workspace\1Diplom\Diplom_project\Diplom_project\bin\System.Web.Razor.xml
+E:\Workspace\1Diplom\Diplom_project\Diplom_project\bin\System.Web.WebPages.xml
+E:\Workspace\1Diplom\Diplom_project\Diplom_project\bin\System.Web.WebPages.Deployment.xml
+E:\Workspace\1Diplom\Diplom_project\Diplom_project\bin\System.Web.WebPages.Razor.xml
+E:\Workspace\1Diplom\Diplom_project\Diplom_project\obj\Debug\Diplom_project.dll
+E:\Workspace\1Diplom\Diplom_project\Diplom_project\obj\Debug\Diplom_project.pdb
+E:\Workspace\1Diplom\Diplom_project\Diplom_project\obj\Debug\Diplom_project.csprojResolveAssemblyReference.cache
+C:\Users\Nevolin\source\repos\ASP.NET MVC Diploma\Diplom_project\bin\Diplom_project.dll.config
+C:\Users\Nevolin\source\repos\ASP.NET MVC Diploma\Diplom_project\bin\Diplom_project.dll
+C:\Users\Nevolin\source\repos\ASP.NET MVC Diploma\Diplom_project\bin\Diplom_project.pdb
+C:\Users\Nevolin\source\repos\ASP.NET MVC Diploma\Diplom_project\bin\Antlr3.Runtime.dll
+C:\Users\Nevolin\source\repos\ASP.NET MVC Diploma\Diplom_project\bin\EntityFramework.dll
+C:\Users\Nevolin\source\repos\ASP.NET MVC Diploma\Diplom_project\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Nevolin\source\repos\ASP.NET MVC Diploma\Diplom_project\bin\Microsoft.Web.Mvc.dll
+C:\Users\Nevolin\source\repos\ASP.NET MVC Diploma\Diplom_project\bin\Newtonsoft.Json.dll
+C:\Users\Nevolin\source\repos\ASP.NET MVC Diploma\Diplom_project\bin\System.Net.Http.Formatting.dll
+C:\Users\Nevolin\source\repos\ASP.NET MVC Diploma\Diplom_project\bin\System.Web.Http.dll
+C:\Users\Nevolin\source\repos\ASP.NET MVC Diploma\Diplom_project\bin\System.Web.Http.WebHost.dll
+C:\Users\Nevolin\source\repos\ASP.NET MVC Diploma\Diplom_project\bin\System.Web.Mvc.dll
+C:\Users\Nevolin\source\repos\ASP.NET MVC Diploma\Diplom_project\bin\System.Web.Optimization.dll
+C:\Users\Nevolin\source\repos\ASP.NET MVC Diploma\Diplom_project\bin\System.Web.Providers.dll
+C:\Users\Nevolin\source\repos\ASP.NET MVC Diploma\Diplom_project\bin\System.Web.Razor.dll
+C:\Users\Nevolin\source\repos\ASP.NET MVC Diploma\Diplom_project\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Nevolin\source\repos\ASP.NET MVC Diploma\Diplom_project\bin\System.Web.WebPages.dll
+C:\Users\Nevolin\source\repos\ASP.NET MVC Diploma\Diplom_project\bin\System.Web.WebPages.Razor.dll
+C:\Users\Nevolin\source\repos\ASP.NET MVC Diploma\Diplom_project\bin\WebGrease.dll
+C:\Users\Nevolin\source\repos\ASP.NET MVC Diploma\Diplom_project\bin\EntityFramework.xml
+C:\Users\Nevolin\source\repos\ASP.NET MVC Diploma\Diplom_project\bin\Newtonsoft.Json.xml
+C:\Users\Nevolin\source\repos\ASP.NET MVC Diploma\Diplom_project\bin\System.Net.Http.Formatting.xml
+C:\Users\Nevolin\source\repos\ASP.NET MVC Diploma\Diplom_project\bin\System.Web.Http.xml
+C:\Users\Nevolin\source\repos\ASP.NET MVC Diploma\Diplom_project\bin\System.Web.Http.WebHost.xml
+C:\Users\Nevolin\source\repos\ASP.NET MVC Diploma\Diplom_project\bin\System.Web.Mvc.xml
+C:\Users\Nevolin\source\repos\ASP.NET MVC Diploma\Diplom_project\bin\System.Web.Razor.xml
+C:\Users\Nevolin\source\repos\ASP.NET MVC Diploma\Diplom_project\bin\System.Web.WebPages.xml
+C:\Users\Nevolin\source\repos\ASP.NET MVC Diploma\Diplom_project\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Nevolin\source\repos\ASP.NET MVC Diploma\Diplom_project\bin\System.Web.WebPages.Razor.xml
+C:\Users\Nevolin\source\repos\ASP.NET MVC Diploma\Diplom_project\obj\Debug\Diplom_project.csprojResolveAssemblyReference.cache
+C:\Users\Nevolin\source\repos\ASP.NET MVC Diploma\Diplom_project\obj\Debug\Diplom_project.csproj.CoreCompileInputs.cache
+C:\Users\Nevolin\source\repos\ASP.NET MVC Diploma\Diplom_project\obj\Debug\Diplom_project.csproj.CopyComplete
+C:\Users\Nevolin\source\repos\ASP.NET MVC Diploma\Diplom_project\obj\Debug\Diplom_project.dll
+C:\Users\Nevolin\source\repos\ASP.NET MVC Diploma\Diplom_project\obj\Debug\Diplom_project.pdb

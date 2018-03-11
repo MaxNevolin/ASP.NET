@@ -1,0 +1,52 @@
+﻿@model Diplom_project.Adress
+
+@{
+    ViewBag.Title = "Adress";
+}
+              <div class="editor-label">
+                @Html.LabelFor(m => m.country)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(m => m.country)
+                @Html.ValidationMessageFor(m => m.country)
+            </div>
+
+             <div class="editor-label">
+                @Html.LabelFor(m => m.region)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(m => m.region)
+                @Html.ValidationMessageFor(m => m.region)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(m => m.city)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(m => m.city)
+                @Html.ValidationMessageFor(m => m.city)
+            </div>
+
+           <div class="editor-label">
+                @Html.LabelFor(m => m.apartment)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(m => m.apartment)
+                @Html.ValidationMessageFor(m => m.apartment)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(m => m.postindex)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(m => m.postindex)
+                @Html.ValidationMessageFor(m => m.postindex)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(m => m.telephone)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(m => m.telephone)
+                @Html.ValidationMessageFor(m => m.telephone)
+            </div>

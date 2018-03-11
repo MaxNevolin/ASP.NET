@@ -1,0 +1,11 @@
+﻿@model List<string>
+
+<ul class="nav nav-pills nav-stacked">
+    @foreach (var product in Model)
+    {
+        <li>@Html.ActionLink(product, 
+                "Browse", "WebStore", 
+                new { type = product }, null)
+        </li>
+    }
+</ul>

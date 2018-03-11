@@ -1,0 +1,23 @@
+﻿@model List<Diplom_project.Product>
+@{
+    
+    ViewBag.Title = "Browse Albums";
+}
+ 
+<div class="genre">
+    <h3><em> @if(Model.Count!=0){
+         @Model.ElementAt(0).typeProduct}</em></h3>
+<div class="center">
+        @foreach (var product in Model)
+        {
+            <div>
+                <a class="product_img_link" href="@Url.Action("Details", new { id = product.idProduct })">
+                    <img alt="@product.nameProduct" class="img-rounded" src="/Content/Images/@product.imageName" />
+                    <h3>@product.nameProduct
+                    <span class="price" style="display:inline;">@product.price грн.</span>
+                    </h3>
+                </a>
+            </div>
+        }
+    </div>
+</div>

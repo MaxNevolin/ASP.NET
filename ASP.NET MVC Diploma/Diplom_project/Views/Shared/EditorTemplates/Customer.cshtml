@@ -1,0 +1,67 @@
+﻿@model Diplom_project.Customer
+
+@{
+    ViewBag.Title = "Customer";
+    var genders = new[]
+    {
+        new { Value = true, Text = "Чоловік" },
+        new { Value = false, Text = "Жінка" },
+    };
+    var items = new SelectList(genders, "Value", "Text");
+}
+
+ <div class="editor-label">
+                @Html.LabelFor(m => m.email)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(m => m.email)
+                @Html.ValidationMessageFor(m => m.email)
+            </div>
+
+             <div class="editor-label">
+                @Html.LabelFor(m => m.firstName)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(m => m.firstName)
+                @Html.ValidationMessageFor(m => m.firstName)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(m => m.lastName)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(m => m.lastName)
+                @Html.ValidationMessageFor(m => m.lastName)
+            </div>
+
+           <div class="editor-label">
+                @Html.LabelFor(m => m.gender)
+            </div>
+            <div class="editor-field">
+                @Html.DropDownListFor(m => m.gender, @items)
+                @Html.ValidationMessageFor(m => m.gender)
+            </div>
+  
+            <div class="editor-label">
+                @Html.LabelFor(m => m.birthday)
+            </div>
+            <div class="editor-field">
+                 @Html.TextBoxFor(m => m.birthday,  new{ @class = "date" })
+                 @Html.ValidationMessageFor(m => m.birthday)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(m => m.password)
+            </div>
+            <div class="editor-field">
+                @Html.PasswordFor(m => m.password)
+                @Html.ValidationMessageFor(m => m.password)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(m => m.confirmPassword)
+            </div>
+            <div class="editor-field">
+                @Html.PasswordFor(m => m.confirmPassword)
+                @Html.ValidationMessageFor(m => m.confirmPassword)
+            </div>           

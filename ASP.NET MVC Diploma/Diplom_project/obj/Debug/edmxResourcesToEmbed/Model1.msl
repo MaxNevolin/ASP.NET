@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="mydbModelStoreContainer" CdmEntityContainer="mydbEntities">
+    <EntitySetMapping Name="adress">
+      <EntityTypeMapping TypeName="mydbModel.Adress">
+        <MappingFragment StoreEntitySet="adress">
+          <ScalarProperty Name="idAdress" ColumnName="idAdress" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="apartment" ColumnName="apartment" />
+          <ScalarProperty Name="region" ColumnName="region" />
+          <ScalarProperty Name="telephone" ColumnName="telephone" />
+          <ScalarProperty Name="postindex" ColumnName="postindex" />
+          <ScalarProperty Name="country" ColumnName="country" />
+          <ScalarProperty Name="Customer_idCustomer" ColumnName="Customer_idCustomer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="customer">
+      <EntityTypeMapping TypeName="mydbModel.Customer">
+        <MappingFragment StoreEntitySet="customer">
+          <ScalarProperty Name="idCustomer" ColumnName="idCustomer" />
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="birthday" ColumnName="birthday" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="CustomerDiscont_idCustomerDiscont" ColumnName="CustomerDiscont_idCustomerDiscont" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="customerdiscont">
+      <EntityTypeMapping TypeName="mydbModel.Customerdiscont">
+        <MappingFragment StoreEntitySet="customerdiscont">
+          <ScalarProperty Name="idCustomerDiscont" ColumnName="idCustomerDiscont" />
+          <ScalarProperty Name="purchaseSum" ColumnName="purchaseSum" />
+          <ScalarProperty Name="discountPercent" ColumnName="discountPercent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="gem">
+      <EntityTypeMapping TypeName="mydbModel.Gem">
+        <MappingFragment StoreEntitySet="gem">
+          <ScalarProperty Name="idGem" ColumnName="idGem" />
+          <ScalarProperty Name="nameGem" ColumnName="nameGem" />
+          <ScalarProperty Name="weightGem" ColumnName="weightGem" />
+          <ScalarProperty Name="formGem" ColumnName="formGem" />
+          <ScalarProperty Name="infoGem" ColumnName="infoGem" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="gemsinprod">
+      <EntityTypeMapping TypeName="mydbModel.Gemsinprod">
+        <MappingFragment StoreEntitySet="gemsinprod">
+          <ScalarProperty Name="Gem_idGem" ColumnName="Gem_idGem" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="Product_idProduct" ColumnName="Product_idProduct" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="material">
+      <EntityTypeMapping TypeName="mydbModel.Material">
+        <MappingFragment StoreEntitySet="material">
+          <ScalarProperty Name="idMaterial" ColumnName="idMaterial" />
+          <ScalarProperty Name="nameMaterial" ColumnName="nameMaterial" />
+          <ScalarProperty Name="probe" ColumnName="probe" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="prodinpurchase">
+      <EntityTypeMapping TypeName="mydbModel.Prodinpurchase">
+        <MappingFragment StoreEntitySet="prodinpurchase">
+          <ScalarProperty Name="Product_idProduct" ColumnName="Product_idProduct" />
+          <ScalarProperty Name="Purchase_idPurchase" ColumnName="Purchase_idPurchase" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="product">
+      <EntityTypeMapping TypeName="mydbModel.Product">
+        <MappingFragment StoreEntitySet="product">
+          <ScalarProperty Name="idProduct" ColumnName="idProduct" />
+          <ScalarProperty Name="nameProduct" ColumnName="nameProduct" />
+          <ScalarProperty Name="weightProduct" ColumnName="weightProduct" />
+          <ScalarProperty Name="typeProduct" ColumnName="typeProduct" />
+          <ScalarProperty Name="Material_idMaterial" ColumnName="Material_idMaterial" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="size" ColumnName="size" />
+          <ScalarProperty Name="ProductDiscont_idProductDiscont" ColumnName="ProductDiscont_idProductDiscont" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="productdiscont">
+      <EntityTypeMapping TypeName="mydbModel.Productdiscont">
+        <MappingFragment StoreEntitySet="productdiscont">
+          <ScalarProperty Name="idProductDiscont" ColumnName="idProductDiscont" />
+          <ScalarProperty Name="discountPercent" ColumnName="discountPercent" />
+          <ScalarProperty Name="discountAmount" ColumnName="discountAmount" />
+          <ScalarProperty Name="dateStart" ColumnName="dateStart" />
+          <ScalarProperty Name="dateFinish" ColumnName="dateFinish" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="purchase">
+      <EntityTypeMapping TypeName="mydbModel.Purchase">
+        <MappingFragment StoreEntitySet="purchase">
+          <ScalarProperty Name="idPurchase" ColumnName="idPurchase" />
+          <ScalarProperty Name="datePurchase" ColumnName="datePurchase" />
+          <ScalarProperty Name="Customer_idCustomer" ColumnName="Customer_idCustomer" />
+          <ScalarProperty Name="totalPrice" ColumnName="totalPrice" />
+          <ScalarProperty Name="Adress_idAdress" ColumnName="Adress_idAdress" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

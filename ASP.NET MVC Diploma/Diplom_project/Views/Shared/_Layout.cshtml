@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("styles", required: false)
+    @Scripts.Render("~/bundles/modernizr")
+    @RenderSection("scripts", required: false)
+    @Styles.Render("~/Content/css")
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div class="global">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+            <div class="container-fluid">
+                <div class="span3">
+                </div>
+                <div class="span5">
+            <form class="navbar-search pull-left">
+                <input type="text" class="search-query" placeholder="Пошук">
+            </form>
+                    </div>
+               <ul class="nav pull-right">
+        @{Html.RenderAction("UserLogin", "Account");}
+                   </ul>
+                 </div>
+             </div>
+       </div>
+     <div class="main"> 
+     <div class="container-fluid"> 
+      <div class="row-fluid">   
+     <div class="span2">
+       <img class="img-rounded" src="/Content/Images/logo.png" />    
+     @{Html.RenderAction("ProductTypeMenu", "WebStore");}
+     </div>
+     <div class="span8">
+     @RenderBody()
+     </div>
+          </div>
+    <div class="span3" id="footer">
+        built with <a href="http://asp.net/mvc">ASP.NET MVC 3</a>
+    </div>
+    </div>
+    </div>
+    </div>
+</body>
+</html>

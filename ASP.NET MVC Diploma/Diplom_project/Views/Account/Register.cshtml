@@ -1,0 +1,39 @@
+﻿@model Diplom_project.Models.RegisterModel
+
+@{
+    ViewBag.Title = "Register";
+   
+}
+
+<h2>Створення нового аккаунту</h2>
+<p>
+    Використовуйте форми нижче для створення нового аккаунту. 
+</p>
+<p>
+    Пароль має бути довжиною не менше @Membership.MinRequiredPasswordLength літер.
+</p>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+ <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".date").datepicker();
+    });
+</script> 
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true, "Створення аккаунту пройшло невдало. Будь-ласка, виправте помилки та спробуйте знову.")
+    <div >       
+         <fieldset>
+           <legend>Інформація аккаунту</legend>
+            @Html.EditorFor(m => m.WebstoreCustomer) 
+            @Html.EditorFor(m => m.CustomerAdress) 
+         <div class="form-actions">
+                <input type="submit" class="btn btn-inverse" value="Зареєструватися" />
+         </div>
+        </fieldset>
+        
+     </div>
+}

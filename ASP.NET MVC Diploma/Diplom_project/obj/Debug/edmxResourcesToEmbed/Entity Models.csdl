@@ -1,0 +1,356 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="mydbModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="mydbEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="adress" EntityType="mydbModel.Adress" />
+    <EntitySet Name="customer" EntityType="mydbModel.Customer" />
+    <EntitySet Name="customerdiscont" EntityType="mydbModel.Customerdiscont" />
+    <EntitySet Name="gem" EntityType="mydbModel.Gem" />
+    <EntitySet Name="gemsinprod" EntityType="mydbModel.Gemsinprod" />
+    <EntitySet Name="material" EntityType="mydbModel.Material" />
+    <EntitySet Name="prodinpurchase" EntityType="mydbModel.Prodinpurchase" />
+    <EntitySet Name="product" EntityType="mydbModel.Product" />
+    <EntitySet Name="productdiscont" EntityType="mydbModel.Productdiscont" />
+    <EntitySet Name="purchase" EntityType="mydbModel.Purchase" />
+    <AssociationSet Name="fk_Adress_Customer1" Association="mydbModel.fk_Adress_Customer1">
+      <End EntitySet="customer" Role="customer" />
+      <End EntitySet="adress" Role="adress" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Purchase_Adress1" Association="mydbModel.fk_Purchase_Adress1">
+      <End EntitySet="adress" Role="adress" />
+      <End EntitySet="purchase" Role="purchase" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Customer_CustomerDiscont1" Association="mydbModel.fk_Customer_CustomerDiscont1">
+      <End EntitySet="customerdiscont" Role="customerdiscont" />
+      <End EntitySet="customer" Role="customer" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Purchase_Customer1" Association="mydbModel.fk_Purchase_Customer1">
+      <End EntitySet="customer" Role="customer" />
+      <End EntitySet="purchase" Role="purchase" />
+    </AssociationSet>
+    <AssociationSet Name="fk_table1_Gem1" Association="mydbModel.fk_table1_Gem1">
+      <End EntitySet="gem" Role="gem" />
+      <End EntitySet="gemsinprod" Role="gemsinprod" />
+    </AssociationSet>
+    <AssociationSet Name="fk_GemsInProd_Product1" Association="mydbModel.fk_GemsInProd_Product1">
+      <End EntitySet="product" Role="product" />
+      <End EntitySet="gemsinprod" Role="gemsinprod" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Product_Material" Association="mydbModel.fk_Product_Material">
+      <End EntitySet="material" Role="material" />
+      <End EntitySet="product" Role="product" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ProdInPurchase_Product1" Association="mydbModel.fk_ProdInPurchase_Product1">
+      <End EntitySet="product" Role="product" />
+      <End EntitySet="prodinpurchase" Role="prodinpurchase" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ProdInPurchase_Purchase1" Association="mydbModel.fk_ProdInPurchase_Purchase1">
+      <End EntitySet="purchase" Role="purchase" />
+      <End EntitySet="prodinpurchase" Role="prodinpurchase" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Product_ProductDiscont1" Association="mydbModel.fk_Product_ProductDiscont1">
+      <End EntitySet="productdiscont" Role="productdiscont" />
+      <End EntitySet="product" Role="product" />
+    </AssociationSet>
+    <EntitySet Name="matinwarehouse" EntityType="mydbModel.Matinwarehouse" />
+    <EntitySet Name="warehousestate" EntityType="mydbModel.Warehousestate" />
+    <AssociationSet Name="fk_MatInWarehouse_Material1" Association="mydbModel.fk_MatInWarehouse_Material1">
+      <End Role="Material" EntitySet="material" />
+      <End Role="matinwarehouse" EntitySet="matinwarehouse" />
+    </AssociationSet>
+    <AssociationSet Name="fk_MatInWarehouse_WarehouseState1" Association="mydbModel.fk_MatInWarehouse_WarehouseState1">
+      <End Role="warehousestate" EntitySet="warehousestate" />
+      <End Role="matinwarehouse" EntitySet="matinwarehouse" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Adress">
+    <Key>
+      <PropertyRef Name="idAdress" />
+    </Key>
+    <Property Name="idAdress" Nullable="false" Type="Int32" />
+    <Property Name="city" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" Type="String" />
+    <Property Name="apartment" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" Type="String" />
+    <Property Name="region" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" Type="String" />
+    <Property Name="telephone" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" Type="String" />
+    <Property Name="postindex" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" Type="String" />
+    <Property Name="country" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" Type="String" />
+    <Property Name="Customer_idCustomer" Nullable="false" Type="Int32" />
+    <NavigationProperty Name="customer" Relationship="mydbModel.fk_Adress_Customer1" FromRole="adress" ToRole="customer" />
+    <NavigationProperty Name="purchase" Relationship="mydbModel.fk_Purchase_Adress1" FromRole="adress" ToRole="purchase" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="idCustomer" />
+    </Key>
+    <Property Name="idCustomer" Nullable="false" Type="Int32" />
+    <Property Name="firstName" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" Type="String" />
+    <Property Name="lastName" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" Type="String" />
+    <Property Name="email" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" Type="String" />
+    <Property Name="password" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" Type="String" />
+    <Property Name="birthday" Precision="0" Type="DateTime" />
+    <Property Name="gender" Type="Boolean" />
+    <Property Name="CustomerDiscont_idCustomerDiscont" Nullable="false" Type="Int32" />
+    <NavigationProperty Name="adress" Relationship="mydbModel.fk_Adress_Customer1" FromRole="customer" ToRole="adress" />
+    <NavigationProperty Name="customerdiscont" Relationship="mydbModel.fk_Customer_CustomerDiscont1" FromRole="customer" ToRole="customerdiscont" />
+    <NavigationProperty Name="purchase" Relationship="mydbModel.fk_Purchase_Customer1" FromRole="customer" ToRole="purchase" />
+  </EntityType>
+  <EntityType Name="Customerdiscont">
+    <Key>
+      <PropertyRef Name="idCustomerDiscont" />
+    </Key>
+    <Property Name="idCustomerDiscont" Nullable="false" Type="Int32" />
+    <Property Name="purchaseSum" Nullable="false" Type="Double" />
+    <Property Name="discountPercent" Type="Double" />
+    <NavigationProperty Name="customer" Relationship="mydbModel.fk_Customer_CustomerDiscont1" FromRole="customerdiscont" ToRole="customer" />
+  </EntityType>
+  <EntityType Name="Gem">
+    <Key>
+      <PropertyRef Name="idGem" />
+    </Key>
+    <Property Name="idGem" Nullable="false" Type="Int32" />
+    <Property Name="nameGem" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" Type="String" />
+    <Property Name="weightGem" Type="Double" />
+    <Property Name="formGem" MaxLength="45" FixedLength="false" Unicode="false" Type="String" />
+    <Property Name="infoGem" MaxLength="100" FixedLength="false" Unicode="false" Type="String" />
+    <NavigationProperty Name="gemsinprod" Relationship="mydbModel.fk_table1_Gem1" FromRole="gem" ToRole="gemsinprod" />
+  </EntityType>
+  <EntityType Name="Gemsinprod">
+    <Key>
+      <PropertyRef Name="Gem_idGem" />
+      <PropertyRef Name="amount" />
+      <PropertyRef Name="Product_idProduct" />
+    </Key>
+    <Property Name="Gem_idGem" Nullable="false" Type="Int32" />
+    <Property Name="amount" Nullable="false" Type="Int32" />
+    <Property Name="Product_idProduct" Nullable="false" Type="Int32" />
+    <NavigationProperty Name="gem" Relationship="mydbModel.fk_table1_Gem1" FromRole="gemsinprod" ToRole="gem" />
+    <NavigationProperty Name="product" Relationship="mydbModel.fk_GemsInProd_Product1" FromRole="gemsinprod" ToRole="product" />
+  </EntityType>
+  <EntityType Name="Material">
+    <Key>
+      <PropertyRef Name="idMaterial" />
+    </Key>
+    <Property Name="idMaterial" Nullable="false" Type="Int32" />
+    <Property Name="nameMaterial" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" Type="String" />
+    <Property Name="probe" MaxLength="45" FixedLength="false" Unicode="false" Type="String" />
+    <NavigationProperty Name="product" Relationship="mydbModel.fk_Product_Material" FromRole="material" ToRole="product" />
+    <NavigationProperty Name="matinwarehouse" Relationship="mydbModel.fk_MatInWarehouse_Material1" FromRole="Material" ToRole="matinwarehouse" />
+  </EntityType>
+  <EntityType Name="Prodinpurchase">
+    <Key>
+      <PropertyRef Name="Product_idProduct" />
+      <PropertyRef Name="Purchase_idPurchase" />
+      <PropertyRef Name="amount" />
+    </Key>
+    <Property Name="Product_idProduct" Nullable="false" Type="Int32" />
+    <Property Name="Purchase_idPurchase" Nullable="false" Type="Int32" />
+    <Property Name="amount" Nullable="false" Type="Int32" />
+    <NavigationProperty Name="product" Relationship="mydbModel.fk_ProdInPurchase_Product1" FromRole="prodinpurchase" ToRole="product" />
+    <NavigationProperty Name="purchase" Relationship="mydbModel.fk_ProdInPurchase_Purchase1" FromRole="prodinpurchase" ToRole="purchase" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="idProduct" />
+    </Key>
+    <Property Name="idProduct" Nullable="false" Type="Int32" />
+    <Property Name="nameProduct" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" Type="String" />
+    <Property Name="weightProduct" Nullable="false" Type="Double" />
+    <Property Name="typeProduct" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" Type="String" />
+    <Property Name="Material_idMaterial" Nullable="false" Type="Int32" />
+    <Property Name="price" Nullable="false" Type="Double" />
+    <Property Name="size" Type="Double" />
+    <Property Name="ProductDiscont_idProductDiscont" Type="Int32" />
+    <NavigationProperty Name="gemsinprod" Relationship="mydbModel.fk_GemsInProd_Product1" FromRole="product" ToRole="gemsinprod" />
+    <NavigationProperty Name="material" Relationship="mydbModel.fk_Product_Material" FromRole="product" ToRole="material" />
+    <NavigationProperty Name="prodinpurchase" Relationship="mydbModel.fk_ProdInPurchase_Product1" FromRole="product" ToRole="prodinpurchase" />
+    <NavigationProperty Name="productdiscont" Relationship="mydbModel.fk_Product_ProductDiscont1" FromRole="product" ToRole="productdiscont" />
+    <Property Type="String" Name="imageName" MaxLength="45" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Productdiscont">
+    <Key>
+      <PropertyRef Name="idProductDiscont" />
+    </Key>
+    <Property Name="idProductDiscont" Nullable="false" Type="Int32" />
+    <Property Name="discountPercent" Nullable="false" Type="Double" />
+    <Property Name="discountAmount" Type="Double" />
+    <Property Name="dateStart" Nullable="false" Precision="0" Type="DateTime" />
+    <Property Name="dateFinish" Nullable="false" Precision="0" Type="DateTime" />
+    <NavigationProperty Name="product" Relationship="mydbModel.fk_Product_ProductDiscont1" FromRole="productdiscont" ToRole="product" />
+  </EntityType>
+  <EntityType Name="Purchase">
+    <Key>
+      <PropertyRef Name="idPurchase" />
+    </Key>
+    <Property Name="idPurchase" Nullable="false" Type="Int32" />
+    <Property Name="datePurchase" Nullable="false" Precision="0" Type="DateTime" />
+    <Property Name="Customer_idCustomer" Nullable="false" Type="Int32" />
+    <Property Name="totalPrice" Type="Double" />
+    <Property Name="Adress_idAdress" Nullable="false" Type="Int32" />
+    <NavigationProperty Name="adress" Relationship="mydbModel.fk_Purchase_Adress1" FromRole="purchase" ToRole="adress" />
+    <NavigationProperty Name="customer" Relationship="mydbModel.fk_Purchase_Customer1" FromRole="purchase" ToRole="customer" />
+    <NavigationProperty Name="prodinpurchase" Relationship="mydbModel.fk_ProdInPurchase_Purchase1" FromRole="purchase" ToRole="prodinpurchase" />
+  </EntityType>
+  <Association Name="fk_Adress_Customer1">
+    <End Type="mydbModel.Customer" Multiplicity="1" Role="customer" />
+    <End Type="mydbModel.Adress" Multiplicity="*" Role="adress" />
+    <ReferentialConstraint>
+      <Principal Role="customer">
+        <PropertyRef Name="idCustomer" />
+      </Principal>
+      <Dependent Role="adress">
+        <PropertyRef Name="Customer_idCustomer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Purchase_Adress1">
+    <End Type="mydbModel.Adress" Multiplicity="1" Role="adress" />
+    <End Type="mydbModel.Purchase" Multiplicity="*" Role="purchase" />
+    <ReferentialConstraint>
+      <Principal Role="adress">
+        <PropertyRef Name="idAdress" />
+      </Principal>
+      <Dependent Role="purchase">
+        <PropertyRef Name="Adress_idAdress" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Customer_CustomerDiscont1">
+    <End Type="mydbModel.Customerdiscont" Multiplicity="1" Role="customerdiscont" />
+    <End Type="mydbModel.Customer" Multiplicity="*" Role="customer" />
+    <ReferentialConstraint>
+      <Principal Role="customerdiscont">
+        <PropertyRef Name="idCustomerDiscont" />
+      </Principal>
+      <Dependent Role="customer">
+        <PropertyRef Name="CustomerDiscont_idCustomerDiscont" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Purchase_Customer1">
+    <End Type="mydbModel.Customer" Multiplicity="1" Role="customer" />
+    <End Type="mydbModel.Purchase" Multiplicity="*" Role="purchase" />
+    <ReferentialConstraint>
+      <Principal Role="customer">
+        <PropertyRef Name="idCustomer" />
+      </Principal>
+      <Dependent Role="purchase">
+        <PropertyRef Name="Customer_idCustomer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_table1_Gem1">
+    <End Type="mydbModel.Gem" Multiplicity="1" Role="gem" />
+    <End Type="mydbModel.Gemsinprod" Multiplicity="*" Role="gemsinprod" />
+    <ReferentialConstraint>
+      <Principal Role="gem">
+        <PropertyRef Name="idGem" />
+      </Principal>
+      <Dependent Role="gemsinprod">
+        <PropertyRef Name="Gem_idGem" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_GemsInProd_Product1">
+    <End Type="mydbModel.Product" Multiplicity="1" Role="product" />
+    <End Type="mydbModel.Gemsinprod" Multiplicity="*" Role="gemsinprod" />
+    <ReferentialConstraint>
+      <Principal Role="product">
+        <PropertyRef Name="idProduct" />
+      </Principal>
+      <Dependent Role="gemsinprod">
+        <PropertyRef Name="Product_idProduct" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Product_Material">
+    <End Type="mydbModel.Material" Multiplicity="1" Role="material" />
+    <End Type="mydbModel.Product" Multiplicity="*" Role="product" />
+    <ReferentialConstraint>
+      <Principal Role="material">
+        <PropertyRef Name="idMaterial" />
+      </Principal>
+      <Dependent Role="product">
+        <PropertyRef Name="Material_idMaterial" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ProdInPurchase_Product1">
+    <End Type="mydbModel.Product" Multiplicity="1" Role="product" />
+    <End Type="mydbModel.Prodinpurchase" Multiplicity="*" Role="prodinpurchase" />
+    <ReferentialConstraint>
+      <Principal Role="product">
+        <PropertyRef Name="idProduct" />
+      </Principal>
+      <Dependent Role="prodinpurchase">
+        <PropertyRef Name="Product_idProduct" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ProdInPurchase_Purchase1">
+    <End Type="mydbModel.Purchase" Multiplicity="1" Role="purchase" />
+    <End Type="mydbModel.Prodinpurchase" Multiplicity="*" Role="prodinpurchase" />
+    <ReferentialConstraint>
+      <Principal Role="purchase">
+        <PropertyRef Name="idPurchase" />
+      </Principal>
+      <Dependent Role="prodinpurchase">
+        <PropertyRef Name="Purchase_idPurchase" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Product_ProductDiscont1">
+    <End Type="mydbModel.Productdiscont" Multiplicity="0..1" Role="productdiscont" />
+    <End Type="mydbModel.Product" Multiplicity="*" Role="product" />
+    <ReferentialConstraint>
+      <Principal Role="productdiscont">
+        <PropertyRef Name="idProductDiscont" />
+      </Principal>
+      <Dependent Role="product">
+        <PropertyRef Name="ProductDiscont_idProductDiscont" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Matinwarehouse">
+    <Key>
+      <PropertyRef Name="Material_idMaterial" />
+      <PropertyRef Name="weight" />
+      <PropertyRef Name="WarehouseState_idWarehouseState" />
+    </Key>
+    <Property Type="Int32" Name="Material_idMaterial" Nullable="false" />
+    <Property Type="Double" Name="weight" Nullable="false" />
+    <Property Type="Int32" Name="WarehouseState_idWarehouseState" Nullable="false" />
+    <NavigationProperty Name="material" Relationship="mydbModel.fk_MatInWarehouse_Material1" FromRole="matinwarehouse" ToRole="Material" />
+    <NavigationProperty Name="warehousestate" Relationship="mydbModel.fk_MatInWarehouse_WarehouseState1" FromRole="matinwarehouse" ToRole="warehousestate" />
+  </EntityType>
+  <EntityType Name="Warehousestate">
+    <Key>
+      <PropertyRef Name="idWarehouseState" />
+    </Key>
+    <Property Type="Int32" Name="idWarehouseState" Nullable="false" />
+    <Property Type="DateTime" Name="dateState" Nullable="false" Precision="0" />
+    <NavigationProperty Name="matinwarehouse" Relationship="mydbModel.fk_MatInWarehouse_WarehouseState1" FromRole="warehousestate" ToRole="matinwarehouse" />
+  </EntityType>
+  <Association Name="fk_MatInWarehouse_Material1">
+    <End Type="mydbModel.Material" Role="Material" Multiplicity="1" />
+    <End Type="mydbModel.Matinwarehouse" Role="matinwarehouse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Material">
+        <PropertyRef Name="idMaterial" />
+      </Principal>
+      <Dependent Role="matinwarehouse">
+        <PropertyRef Name="Material_idMaterial" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_MatInWarehouse_WarehouseState1">
+    <End Type="mydbModel.Warehousestate" Role="warehousestate" Multiplicity="1" />
+    <End Type="mydbModel.Matinwarehouse" Role="matinwarehouse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="warehousestate">
+        <PropertyRef Name="idWarehouseState" />
+      </Principal>
+      <Dependent Role="matinwarehouse">
+        <PropertyRef Name="WarehouseState_idWarehouseState" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

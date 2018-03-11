@@ -1,0 +1,29 @@
+﻿@model Diplom_project.Product
+@{
+    ViewBag.Title = "Виріб - " + Model.nameProduct;
+}
+
+<h2>@Model.nameProduct</h2>
+
+<p>
+    <img alt="@Model.nameProduct" class="img-rounded" src="/Content/Images/@Model.imageName" />
+</p>
+
+<div id="album-details">
+    <p>
+        <em>Тип:</em>
+        @Model.typeProduct
+    </p>
+    <p>
+        <em>Матеріал:</em>
+        @Model.material.nameMaterial проба @Model.material.probe
+    </p>
+    <p>
+        <em>Дорогоцінне каміння:</em>
+         @{Html.RenderAction("DetailsGems", "WebStore", new { idProd = Model.idProduct });}
+    </p>
+    <p class="button">
+        @Html.ActionLink("Add to cart", "AddToCart", 
+        "ShoppingCart", new { id = Model.idProduct }, "")
+    </p>
+</div>

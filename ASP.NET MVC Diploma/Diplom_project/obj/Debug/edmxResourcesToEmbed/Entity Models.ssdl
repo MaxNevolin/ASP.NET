@@ -1,0 +1,359 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="mydbModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="mydbModelStoreContainer">
+    <EntitySet Name="adress" EntityType="mydbModel.Store.adress" store:Type="Tables" Schema="mydb" />
+    <EntitySet Name="customer" EntityType="mydbModel.Store.customer" store:Type="Tables" Schema="mydb" />
+    <EntitySet Name="customerdiscont" EntityType="mydbModel.Store.customerdiscont" store:Type="Tables" Schema="mydb" />
+    <EntitySet Name="gem" EntityType="mydbModel.Store.gem" store:Type="Tables" Schema="mydb" />
+    <EntitySet Name="gemsinprod" EntityType="mydbModel.Store.gemsinprod" store:Type="Tables" store:Schema="mydb" store:Name="gemsinprod">
+      <DefiningQuery>SELECT
+      `gemsinprod`.`Gem_idGem`, 
+      `gemsinprod`.`amount`, 
+      `gemsinprod`.`Product_idProduct`
+      FROM `gemsinprod` AS `gemsinprod`</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="material" EntityType="mydbModel.Store.material" store:Type="Tables" Schema="mydb" />
+    <EntitySet Name="matinwarehouse" EntityType="mydbModel.Store.matinwarehouse" store:Type="Tables" store:Schema="mydb" store:Name="matinwarehouse">
+      <DefiningQuery>SELECT
+      `matinwarehouse`.`Material_idMaterial`, 
+      `matinwarehouse`.`weight`, 
+      `matinwarehouse`.`WarehouseState_idWarehouseState`
+      FROM `matinwarehouse` AS `matinwarehouse`</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="prodinpurchase" EntityType="mydbModel.Store.prodinpurchase" store:Type="Tables" store:Schema="mydb" store:Name="prodinpurchase">
+      <DefiningQuery>SELECT
+      `prodinpurchase`.`Product_idProduct`, 
+      `prodinpurchase`.`Purchase_idPurchase`, 
+      `prodinpurchase`.`amount`
+      FROM `prodinpurchase` AS `prodinpurchase`</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="product" EntityType="mydbModel.Store.product" store:Type="Tables" Schema="mydb" />
+    <EntitySet Name="productdiscont" EntityType="mydbModel.Store.productdiscont" store:Type="Tables" Schema="mydb" />
+    <EntitySet Name="purchase" EntityType="mydbModel.Store.purchase" store:Type="Tables" Schema="mydb" />
+    <EntitySet Name="warehousestate" EntityType="mydbModel.Store.warehousestate" store:Type="Tables" Schema="mydb" />
+    <AssociationSet Name="fk_Adress_Customer1" Association="mydbModel.Store.fk_Adress_Customer1">
+      <End Role="customer" EntitySet="customer" />
+      <End Role="adress" EntitySet="adress" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Customer_CustomerDiscont1" Association="mydbModel.Store.fk_Customer_CustomerDiscont1">
+      <End Role="customerdiscont" EntitySet="customerdiscont" />
+      <End Role="customer" EntitySet="customer" />
+    </AssociationSet>
+    <AssociationSet Name="fk_GemsInProd_Product1" Association="mydbModel.Store.fk_GemsInProd_Product1">
+      <End Role="product" EntitySet="product" />
+      <End Role="gemsinprod" EntitySet="gemsinprod" />
+    </AssociationSet>
+    <AssociationSet Name="fk_MatInWarehouse_Material1" Association="mydbModel.Store.fk_MatInWarehouse_Material1">
+      <End Role="material" EntitySet="material" />
+      <End Role="matinwarehouse" EntitySet="matinwarehouse" />
+    </AssociationSet>
+    <AssociationSet Name="fk_MatInWarehouse_WarehouseState1" Association="mydbModel.Store.fk_MatInWarehouse_WarehouseState1">
+      <End Role="warehousestate" EntitySet="warehousestate" />
+      <End Role="matinwarehouse" EntitySet="matinwarehouse" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ProdInPurchase_Product1" Association="mydbModel.Store.fk_ProdInPurchase_Product1">
+      <End Role="product" EntitySet="product" />
+      <End Role="prodinpurchase" EntitySet="prodinpurchase" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ProdInPurchase_Purchase1" Association="mydbModel.Store.fk_ProdInPurchase_Purchase1">
+      <End Role="purchase" EntitySet="purchase" />
+      <End Role="prodinpurchase" EntitySet="prodinpurchase" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Product_Material" Association="mydbModel.Store.fk_Product_Material">
+      <End Role="material" EntitySet="material" />
+      <End Role="product" EntitySet="product" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Product_ProductDiscont1" Association="mydbModel.Store.fk_Product_ProductDiscont1">
+      <End Role="productdiscont" EntitySet="productdiscont" />
+      <End Role="product" EntitySet="product" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Purchase_Adress1" Association="mydbModel.Store.fk_Purchase_Adress1">
+      <End Role="adress" EntitySet="adress" />
+      <End Role="purchase" EntitySet="purchase" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Purchase_Customer1" Association="mydbModel.Store.fk_Purchase_Customer1">
+      <End Role="customer" EntitySet="customer" />
+      <End Role="purchase" EntitySet="purchase" />
+    </AssociationSet>
+    <AssociationSet Name="fk_table1_Gem1" Association="mydbModel.Store.fk_table1_Gem1">
+      <End Role="gem" EntitySet="gem" />
+      <End Role="gemsinprod" EntitySet="gemsinprod" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="adress">
+    <Key>
+      <PropertyRef Name="idAdress" />
+    </Key>
+    <Property Name="idAdress" Type="int" Nullable="false" />
+    <Property Name="city" Type="varchar" Nullable="false" MaxLength="45" />
+    <Property Name="apartment" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="region" Type="varchar" Nullable="false" MaxLength="45" />
+    <Property Name="telephone" Type="varchar" Nullable="false" MaxLength="45" />
+    <Property Name="postindex" Type="varchar" Nullable="false" MaxLength="45" />
+    <Property Name="country" Type="varchar" Nullable="false" MaxLength="45" />
+    <Property Name="Customer_idCustomer" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="customer">
+    <Key>
+      <PropertyRef Name="idCustomer" />
+    </Key>
+    <Property Name="idCustomer" Type="int" Nullable="false" />
+    <Property Name="firstName" Type="varchar" Nullable="false" MaxLength="45" />
+    <Property Name="lastName" Type="varchar" Nullable="false" MaxLength="45" />
+    <Property Name="email" Type="varchar" Nullable="false" MaxLength="45" />
+    <Property Name="password" Type="varchar" Nullable="false" MaxLength="45" />
+    <Property Name="birthday" Type="date" />
+    <Property Name="gender" Type="bool" />
+    <Property Name="CustomerDiscont_idCustomerDiscont" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="customerdiscont">
+    <Key>
+      <PropertyRef Name="idCustomerDiscont" />
+    </Key>
+    <Property Name="idCustomerDiscont" Type="int" Nullable="false" />
+    <Property Name="purchaseSum" Type="double" Nullable="false" />
+    <Property Name="discountPercent" Type="double" />
+  </EntityType>
+  <EntityType Name="gem">
+    <Key>
+      <PropertyRef Name="idGem" />
+    </Key>
+    <Property Name="idGem" Type="int" Nullable="false" />
+    <Property Name="nameGem" Type="varchar" Nullable="false" MaxLength="45" />
+    <Property Name="weightGem" Type="double" />
+    <Property Name="formGem" Type="varchar" MaxLength="45" />
+    <Property Name="infoGem" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'def.mydb.gemsinprod' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="gemsinprod">
+    <Key>
+      <PropertyRef Name="Gem_idGem" />
+      <PropertyRef Name="amount" />
+      <PropertyRef Name="Product_idProduct" />
+    </Key>
+    <Property Name="Gem_idGem" Type="int" Nullable="false" />
+    <Property Name="amount" Type="int" Nullable="false" />
+    <Property Name="Product_idProduct" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="material">
+    <Key>
+      <PropertyRef Name="idMaterial" />
+    </Key>
+    <Property Name="idMaterial" Type="int" Nullable="false" />
+    <Property Name="nameMaterial" Type="varchar" Nullable="false" MaxLength="45" />
+    <Property Name="probe" Type="varchar" MaxLength="45" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'def.mydb.matinwarehouse' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="matinwarehouse">
+    <Key>
+      <PropertyRef Name="Material_idMaterial" />
+      <PropertyRef Name="weight" />
+      <PropertyRef Name="WarehouseState_idWarehouseState" />
+    </Key>
+    <Property Name="Material_idMaterial" Type="int" Nullable="false" />
+    <Property Name="weight" Type="double" Nullable="false" />
+    <Property Name="WarehouseState_idWarehouseState" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'def.mydb.prodinpurchase' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="prodinpurchase">
+    <Key>
+      <PropertyRef Name="Product_idProduct" />
+      <PropertyRef Name="Purchase_idPurchase" />
+      <PropertyRef Name="amount" />
+    </Key>
+    <Property Name="Product_idProduct" Type="int" Nullable="false" />
+    <Property Name="Purchase_idPurchase" Type="int" Nullable="false" />
+    <Property Name="amount" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="product">
+    <Key>
+      <PropertyRef Name="idProduct" />
+    </Key>
+    <Property Name="idProduct" Type="int" Nullable="false" />
+    <Property Name="nameProduct" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="weightProduct" Type="double" Nullable="false" />
+    <Property Name="typeProduct" Type="varchar" Nullable="false" MaxLength="45" />
+    <Property Name="Material_idMaterial" Type="int" Nullable="false" />
+    <Property Name="price" Type="double" Nullable="false" />
+    <Property Name="size" Type="double" />
+    <Property Name="ProductDiscont_idProductDiscont" Type="int" />
+    <Property Name="imageName" Type="varchar" MaxLength="45" />
+  </EntityType>
+  <EntityType Name="productdiscont">
+    <Key>
+      <PropertyRef Name="idProductDiscont" />
+    </Key>
+    <Property Name="idProductDiscont" Type="int" Nullable="false" />
+    <Property Name="discountPercent" Type="double" Nullable="false" />
+    <Property Name="discountAmount" Type="double" />
+    <Property Name="dateStart" Type="date" Nullable="false" />
+    <Property Name="dateFinish" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="purchase">
+    <Key>
+      <PropertyRef Name="idPurchase" />
+    </Key>
+    <Property Name="idPurchase" Type="int" Nullable="false" />
+    <Property Name="datePurchase" Type="date" Nullable="false" />
+    <Property Name="Customer_idCustomer" Type="int" Nullable="false" />
+    <Property Name="totalPrice" Type="double" />
+    <Property Name="Adress_idAdress" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="warehousestate">
+    <Key>
+      <PropertyRef Name="idWarehouseState" />
+    </Key>
+    <Property Name="idWarehouseState" Type="int" Nullable="false" />
+    <Property Name="dateState" Type="date" Nullable="false" />
+  </EntityType>
+  <Association Name="fk_Adress_Customer1">
+    <End Role="customer" Type="mydbModel.Store.customer" Multiplicity="1" />
+    <End Role="adress" Type="mydbModel.Store.adress" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="customer">
+        <PropertyRef Name="idCustomer" />
+      </Principal>
+      <Dependent Role="adress">
+        <PropertyRef Name="Customer_idCustomer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Customer_CustomerDiscont1">
+    <End Role="customerdiscont" Type="mydbModel.Store.customerdiscont" Multiplicity="1" />
+    <End Role="customer" Type="mydbModel.Store.customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="customerdiscont">
+        <PropertyRef Name="idCustomerDiscont" />
+      </Principal>
+      <Dependent Role="customer">
+        <PropertyRef Name="CustomerDiscont_idCustomerDiscont" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_GemsInProd_Product1">
+    <End Role="product" Type="mydbModel.Store.product" Multiplicity="1" />
+    <End Role="gemsinprod" Type="mydbModel.Store.gemsinprod" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="product">
+        <PropertyRef Name="idProduct" />
+      </Principal>
+      <Dependent Role="gemsinprod">
+        <PropertyRef Name="Product_idProduct" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_MatInWarehouse_Material1">
+    <End Role="material" Type="mydbModel.Store.material" Multiplicity="1" />
+    <End Role="matinwarehouse" Type="mydbModel.Store.matinwarehouse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="material">
+        <PropertyRef Name="idMaterial" />
+      </Principal>
+      <Dependent Role="matinwarehouse">
+        <PropertyRef Name="Material_idMaterial" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_MatInWarehouse_WarehouseState1">
+    <End Role="warehousestate" Type="mydbModel.Store.warehousestate" Multiplicity="1" />
+    <End Role="matinwarehouse" Type="mydbModel.Store.matinwarehouse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="warehousestate">
+        <PropertyRef Name="idWarehouseState" />
+      </Principal>
+      <Dependent Role="matinwarehouse">
+        <PropertyRef Name="WarehouseState_idWarehouseState" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ProdInPurchase_Product1">
+    <End Role="product" Type="mydbModel.Store.product" Multiplicity="1" />
+    <End Role="prodinpurchase" Type="mydbModel.Store.prodinpurchase" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="product">
+        <PropertyRef Name="idProduct" />
+      </Principal>
+      <Dependent Role="prodinpurchase">
+        <PropertyRef Name="Product_idProduct" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ProdInPurchase_Purchase1">
+    <End Role="purchase" Type="mydbModel.Store.purchase" Multiplicity="1" />
+    <End Role="prodinpurchase" Type="mydbModel.Store.prodinpurchase" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="purchase">
+        <PropertyRef Name="idPurchase" />
+      </Principal>
+      <Dependent Role="prodinpurchase">
+        <PropertyRef Name="Purchase_idPurchase" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Product_Material">
+    <End Role="material" Type="mydbModel.Store.material" Multiplicity="1" />
+    <End Role="product" Type="mydbModel.Store.product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="material">
+        <PropertyRef Name="idMaterial" />
+      </Principal>
+      <Dependent Role="product">
+        <PropertyRef Name="Material_idMaterial" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Product_ProductDiscont1">
+    <End Role="productdiscont" Type="mydbModel.Store.productdiscont" Multiplicity="0..1" />
+    <End Role="product" Type="mydbModel.Store.product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="productdiscont">
+        <PropertyRef Name="idProductDiscont" />
+      </Principal>
+      <Dependent Role="product">
+        <PropertyRef Name="ProductDiscont_idProductDiscont" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Purchase_Adress1">
+    <End Role="adress" Type="mydbModel.Store.adress" Multiplicity="1" />
+    <End Role="purchase" Type="mydbModel.Store.purchase" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="adress">
+        <PropertyRef Name="idAdress" />
+      </Principal>
+      <Dependent Role="purchase">
+        <PropertyRef Name="Adress_idAdress" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Purchase_Customer1">
+    <End Role="customer" Type="mydbModel.Store.customer" Multiplicity="1" />
+    <End Role="purchase" Type="mydbModel.Store.purchase" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="customer">
+        <PropertyRef Name="idCustomer" />
+      </Principal>
+      <Dependent Role="purchase">
+        <PropertyRef Name="Customer_idCustomer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_table1_Gem1">
+    <End Role="gem" Type="mydbModel.Store.gem" Multiplicity="1" />
+    <End Role="gemsinprod" Type="mydbModel.Store.gemsinprod" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="gem">
+        <PropertyRef Name="idGem" />
+      </Principal>
+      <Dependent Role="gemsinprod">
+        <PropertyRef Name="Gem_idGem" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
